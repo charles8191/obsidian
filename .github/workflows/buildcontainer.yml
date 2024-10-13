@@ -14,7 +14,7 @@ jobs:
           git clone https://git.almalinux.org/charles2/obsidian.git
           mv obsidian/* .
       - name: Login to git.almalinux.org
-        run: echo "${{ secrets.GIT_ALMALINUX_ORG }}" | podman login ghcr.io -u charles2 --password-stdin
+        run: echo "${{ secrets.GIT_ALMALINUX_ORG }}" | podman login git.almalinux.org -u charles2 --password-stdin
       - name: Build 9
         run: |
           podman build -t git.almalinux.org/charles2/obsidian:9 .
