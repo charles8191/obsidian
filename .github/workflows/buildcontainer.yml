@@ -17,7 +17,7 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | podman login ghcr.io -u "${{ github.actor }}" --password-stdin
       - name: Build 9
         run: |
-          podman build -t git.almalinux.org/charles2/obsidian:9 .
+          podman build -t ghcr.io/charles8191/obsidian/9 .
       - name: Push
         run: |
-          podman push git.almalinux.org/charles2/obsidian:9
+          podman push ghcr.io/charles8191/obsidian/9
