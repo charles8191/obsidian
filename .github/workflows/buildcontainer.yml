@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Clone
         run: |
-          git clone https://git.almalinux.org/charles2/obsidian.git
+          git clone http://charlesst.us.to:1511/git/root/obsidian.git
           mv obsidian/* .
       - name: Login to git.almalinux.org
         run: echo "${{ secrets.GIT_ALMALINUX_ORG }}" | podman login git.almalinux.org -u charles2 --password-stdin
