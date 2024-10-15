@@ -11,13 +11,13 @@ jobs:
     steps:
       - name: Clone
         run: |
-          git clone http://charlesst.us.to:1511/git/root/obsidian.git
+          git clone https://git.almalinux.org/charles2/obsidian.git
           mv obsidian/* .
-      - name: Login to ghcr.io
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | podman login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Login to AlmaLinux
+        run: echo "${{ secrets.GIT_ALMALINUX_ORG }}" | podman login git.almalinux.org -u charles2 --password-stdin
       - name: Build 9
         run: |
-          podman build -t ghcr.io/charles8191/obsidian/9 .
+          podman build -t git.almalinux.org/charles2/obsidian:9 .
       - name: Push
         run: |
-          podman push ghcr.io/charles8191/obsidian/9
+          podman push git.almalinux.org/charles2/obsidian:9

@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Clone
         run: |
-          git clone http://charlesst.us.to:1511/git/root/obsidian.git
+          git clone https://git.almalinux.org/charles2/obsidian.git
           mv obsidian/* .
       - name: Get current date
         id: date
