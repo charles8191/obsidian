@@ -11,13 +11,13 @@ jobs:
     steps:
       - name: Clone
         run: |
-          git clone https://git.almalinux.org/charles2/obsidian.git
-          mv obsidian/* .
+          git clone https://git.almalinux.org/charles2/calcite.git
+          mv calcite/* .
       - name: Login to AlmaLinux
         run: echo "${{ secrets.GIT_ALMALINUX_ORG }}" | podman login git.almalinux.org -u charles2 --password-stdin
       - name: Build 9
         run: |
-          podman build -t git.almalinux.org/charles2/obsidian:9 .
+          podman build -t git.almalinux.org/charles2/calcite:9 .
       - name: Push
         run: |
-          podman push git.almalinux.org/charles2/obsidian:9
+          podman push git.almalinux.org/charles2/calcite:9
