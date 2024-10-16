@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Clone
         run: |
-          git clone https://git.almalinux.org/charles2/obsidian.git
-          mv obsidian/* .
+          git clone https://git.almalinux.org/charles2/calcite.git
+          mv calcite/* .
       - name: Get current date
         id: date
         run: |
